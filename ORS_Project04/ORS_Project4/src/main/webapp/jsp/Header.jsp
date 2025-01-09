@@ -89,6 +89,10 @@
 					href="<%=ORSView.VEHICLE_LIST_CTL%>">Vehicle List</b></a> | <a
 					href="<%=ORSView.PRESCRIPTION_CTL%>">Add Prescription</b></a> | <a
 					href="<%=ORSView.PRESCRIPTION_LIST_CTL%>">Prescription List</b></a> | <a
+					href="<%=ORSView.FOLLOWUP_CTL%>">Add FollowUp</b></a> | <a
+					href="<%=ORSView.FOLLOWUP_LIST_CTL%>">FollowUp List</b></a> | <a
+					href="<%=ORSView.DOCTOR_CTL%>">Add Doctor</b></a> | <a
+					href="<%=ORSView.DOCTOR_LIST_CTL%>">Doctor List</b></a> | <a
 					target="blank" href="<%=ORSView.JAVA_DOC_VIEW%>">Java Doc</b></a> | <%
  }
  %> <%

@@ -1,4 +1,5 @@
 
+<%@page import="com.rays.pro4.controller.FollowUpCtl"%>
 <%@page import="com.rays.pro4.controller.PrescriptionCtl"%>
 <%@page import="com.rays.pro4.controller.PrescriptionCtl"%>
 <%@page import="com.rays.pro4.Util.DataUtility"%>
@@ -11,9 +12,9 @@
 </head>
 <body>
 <%@ include file="Header.jsp"%>
-	<form action="<%=ORSView.PRESCRIPTION_CTL%>" method="post">
+	<form action="<%=ORSView.FOLLOWUP_CTL%>" method="post">
 		
-		<jsp:useBean id="bean" class="com.rays.pro4.Bean.PrescriptionBean"
+		<jsp:useBean id="bean" class="com.rays.pro4.Bean.FollowUpBean"
 			scope="request"></jsp:useBean>
 
 		<div align="center">
@@ -25,7 +26,7 @@
  } else {
  %> Add <%
  }
- %> Order
+ %> Follow Up
 				</font>
 			</h1>
 
@@ -49,29 +50,29 @@
 
 			<table>
 				<tr>
-					<th>Name</th>
-					<td><input type="text" name="name"
-						placeholder="Enter Name" value="<%=DataUtility.getStringData(bean.getName())%>"></td>
-					<td style="position: fixed;"><font color="red"> <%=ServletUtility.getErrorMessage("quantity", request)%></font></td>
+					<th>Patient</th>
+					<td><input type="text" name="patient"
+						placeholder="Enter Patient Name" value="<%=DataUtility.getStringData(bean.getPatient())%>"></td>
+					<td style="position: fixed;"><font color="red"> <%=ServletUtility.getErrorMessage("patient", request)%></font></td>
 				</tr>
 				<tr>
-					<th>Decease</th>
-					<td><input type="text" name="decease"
-						placeholder="Enter Decease" value="<%=DataUtility.getStringData(bean.getDecease())%>"></td>
-					<td style="position: fixed;"><font color="red"> <%=ServletUtility.getErrorMessage("decease", request)%></font></td>
+					<th>Doctor</th>
+					<td><input type="text" name="doctor"
+						placeholder="Enter doctor" value="<%=DataUtility.getStringData(bean.getDoctor())%>"></td>
+					<td style="position: fixed;"><font color="red"> <%=ServletUtility.getErrorMessage("doctor", request)%></font></td>
 				</tr>
 				<tr>
-					<th>Dob:</th>
-					<td><input type="text" id="udate" name="date"
+					<th>Visit Date</th>
+					<td><input type="text" id="udate" name="visitDate"
 						placeholder="Select Date"
-						value="<%=DataUtility.getDateString(bean.getDate())%>"></td>
-					<td style="position: fixed;"><font color="red"> <%=ServletUtility.getErrorMessage("date", request)%></font></td>
+						value="<%=DataUtility.getDateString(bean.getVisitDate())%>"></td>
+					<td style="position: fixed;"><font color="red"> <%=ServletUtility.getErrorMessage("visitDate", request)%></font></td>
 				</tr>
 				<tr>
-					<th>Capacity</th>
-					<td><input type="text" name="capacity"
-						placeholder="Enter capacity" value="<%=DataUtility.getStringData(bean.getCapacity())%>"></td>
-					<td style="position: fixed;"><font color="red"> <%=ServletUtility.getErrorMessage("capacity", request)%></font></td>
+					<th>Fees</th>
+					<td><input type="text" name="fees"
+						placeholder="Enter Fees" value="<%=DataUtility.getStringData(bean.getFees())%>"></td>
+					<td style="position: fixed;"><font color="red"> <%=ServletUtility.getErrorMessage("fees", request)%></font></td>
 				</tr>
 				<tr>
 					<th></th>
@@ -79,14 +80,14 @@
 					if (bean != null && bean.getId() > 0) {
 					%>
 					<td align="left" colspan="2"><input type="submit"
-						name="operation" value="<%=PrescriptionCtl.OP_UPDATE%>"> <input
-						type="submit" name="operation" value="<%=PrescriptionCtl.OP_CANCEL%>">
+						name="operation" value="<%=FollowUpCtl.OP_UPDATE%>"> <input
+						type="submit" name="operation" value="<%=FollowUpCtl.OP_CANCEL%>">
 						<%
 						} else {
 						%>
 					<td align="left" colspan="2"><input type="submit"
-						name="operation" value="<%=PrescriptionCtl.OP_SAVE%>"> <input
-						type="submit" name="operation" value="<%=PrescriptionCtl.OP_RESET%>">
+						name="operation" value="<%=FollowUpCtl.OP_SAVE%>"> <input
+						type="submit" name="operation" value="<%=FollowUpCtl.OP_RESET%>">
 						<%
 						}
 						%>

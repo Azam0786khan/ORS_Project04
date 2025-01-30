@@ -1,3 +1,0 @@
-/target/
-/mysql-data/
-ORS_Project4/mysql-data/

@@ -591,6 +591,7 @@ public class UserModel {
 
 		if (userData == null) {
 			System.out.println("Email Id does not exist !");
+			throw new RecordNotFoundException("Email Id does not exist !");
 		}
 
 		HashMap<String, String> map = new HashMap<String, String>();

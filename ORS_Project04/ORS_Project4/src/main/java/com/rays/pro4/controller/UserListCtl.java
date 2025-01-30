@@ -21,21 +21,19 @@ import com.rays.pro4.Util.ServletUtility;
 
 //TODO: Auto-generated Javadoc
 /**
-* User List functionality Controller. Performs operation for list, search and
-* delete operations of User
-* 
-*  @author Azam Khan
-*/
+ * User List functionality Controller. Performs operation for list, search and
+ * delete operations of User
+ * 
+ * @author Azam Khan
+ */
 @WebServlet(name = "UserListCtl", urlPatterns = { "/ctl/UserListCtl" })
-public class UserListCtl extends BaseCtl{
+public class UserListCtl extends BaseCtl {
 
 	private static Logger log = Logger.getLogger(UserListCtl.class);
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see in.co.rays.ors.controller.BaseCtl#preload(javax.servlet.http.
-	 * HttpServletRequest)
+	
+	/**
+	 *
 	 */
 	@Override
 	protected void preload(HttpServletRequest request) {
@@ -44,8 +42,8 @@ public class UserListCtl extends BaseCtl{
 		UserModel umodel = new UserModel();
 
 		try {
-			List rlist = rmodel.list(0,0);
-			List ulist = umodel.list(0,0);
+			List rlist = rmodel.list(0, 0);
+			List ulist = umodel.list(0, 0);
 
 			request.setAttribute("RoleList", rlist);
 			request.setAttribute("LoginId", ulist);
@@ -113,7 +111,7 @@ public class UserListCtl extends BaseCtl{
 			ServletUtility.setList(list, request);
 			ServletUtility.setPageNo(pageNo, request);
 			ServletUtility.setPageSize(pageSize, request);
-			//ServletUtility.setBean(bean, request);
+			// ServletUtility.setBean(bean, request);
 			ServletUtility.forward(getView(), request, response);
 		} catch (ApplicationException e) {
 			log.error(e);

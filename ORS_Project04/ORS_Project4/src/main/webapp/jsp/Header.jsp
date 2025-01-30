@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <%@page import="com.rays.pro4.Bean.UserBean"%>
@@ -12,7 +13,7 @@
 <body>
 	<%
 	UserBean userBean = (UserBean) session.getAttribute("user");
-	boolean userLoggedIn = userBean != null;          
+	boolean userLoggedIn = userBean != null;
 	String welcomeMsg = "Hi, ";
 	if (userLoggedIn) {
 		String role = (String) session.getAttribute("role");

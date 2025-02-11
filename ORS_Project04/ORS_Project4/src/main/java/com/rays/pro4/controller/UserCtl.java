@@ -248,7 +248,7 @@ public class UserCtl extends BaseCtl {
 			UserBean bean = (UserBean) populateBean(request);
 			System.out.println(" U ctl DoPost 11111111");
 
-			try {
+			try { 
 				if (id > 0) {
 
 					// System.out.println("hi i am in dopost update");

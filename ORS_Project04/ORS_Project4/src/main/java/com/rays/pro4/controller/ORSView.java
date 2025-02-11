@@ -60,6 +60,8 @@ public interface ORSView {
 		 public String FOLLOWUP_VIEW = PAGE_FOLDER + "/FollowUpView.jsp";
 		 public String DOCTOR_LIST_VIEW = PAGE_FOLDER + "/DoctorListView.jsp";
 		 public String DOCTOR_VIEW = PAGE_FOLDER + "/DoctorView.jsp";
+		 public String CLIENT_LIST_VIEW = PAGE_FOLDER + "/ClientListView.jsp";
+		 public String CLIENT_VIEW = PAGE_FOLDER + "/ClientView.jsp";
 		 //   public String ERROR_VIEW5 = PAGE_FOLDER + "/ErrorView5.jsp";
 		    
 
@@ -105,6 +107,8 @@ public interface ORSView {
 	    public String FOLLOWUP_CTL = APP_CONTEXT + "/ctl/FollowUpCtl";
 	    public String DOCTOR_LIST_CTL = APP_CONTEXT + "/ctl/DoctorListCtl";
 	    public String DOCTOR_CTL = APP_CONTEXT + "/ctl/DoctorCtl";
+	    public String CLIENT_LIST_CTL = APP_CONTEXT + "/ctl/ClientListCtl";
+	    public String CLIENT_CTL = APP_CONTEXT + "/ctl/ClientCtl";
 	   
 	
 }

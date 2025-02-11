@@ -314,8 +314,8 @@ public class UserModel {
 			if (bean.getPassword() != null && bean.getPassword().length() > 0) {
 				sql.append(" AND PASSWORD like '" + bean.getPassword() + "%'");
 			}
-			if (bean.getDob() != null && bean.getDob().getDate() > 0) {
-				sql.append(" AND DOB = " + bean.getGender());
+			if (bean.getDob() != null && bean.getDob().getTime() > 0) {
+				sql.append(" AND DOB = " + new java.sql.Date(bean.getDob().getTime()));
 			}
 			if (bean.getMobileNo() != null && bean.getMobileNo().length() > 0) {
 				sql.append(" AND MOBILE_NO = " + bean.getMobileNo());
@@ -525,7 +525,7 @@ public class UserModel {
 	public boolean changePassword(Long id, String oldPassword, String newPassword)
 			throws ApplicationException, RecordNotFoundException {
 
-		log.debug("Model chanfwPassword Started");
+		log.debug("Model changePassword Started");
 		boolean flag = false;
 		UserBean beanexist = null;
 

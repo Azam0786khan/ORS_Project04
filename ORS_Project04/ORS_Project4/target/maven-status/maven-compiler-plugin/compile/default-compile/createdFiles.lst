@@ -13,6 +13,7 @@ com\rays\proj4\Test\FacultyTest.class
 com\rays\proj4\Test\RoleTest.class
 com\rays\pro4\Model\FollowUpModel.class
 com\rays\pro4\controller\ORSView.class
+com\rays\pro4\Bean\ClientBean.class
 com\rays\pro4\controller\MarksheetMeritListCtl.class
 com\rays\proj4\Test\CollegeModelTest.class
 com\rays\pro4\controller\UserListCtl.class
@@ -24,6 +25,7 @@ com\rays\pro4\Util\DataUtility.class
 com\rays\pro4\Model\CollegeModel.class
 com\rays\pro4\Util\ServletUtility.class
 com\rays\pro4\Model\StudentModel.class
+com\rays\pro4\controller\ClientListCtl.class
 com\rays\pro4\Bean\RoleBean.class
 com\rays\proj4\Test\StudentTest.class
 com\rays\pro4\controller\OrderCtl.class
@@ -66,6 +68,7 @@ com\rays\pro4\controller\WelcomeCtl.class
 com\rays\pro4\Bean\PrescriptionBean.class
 com\rays\pro4\controller\CollegeListCtl.class
 com\rays\pro4\Model\UserModel.class
+com\rays\pro4\controller\ClientCtl.class
 com\rays\pro4\controller\FrontControler.class
 com\rays\pro4\Model\RoleModel.class
 com\rays\pro4\Bean\OrderBean.class
@@ -90,6 +93,7 @@ com\rays\pro4\Exception\ApplicationException.class
 com\rays\pro4\Bean\TimeTableBean.class
 com\rays\pro4\controller\PrescriptionCtl.class
 com\rays\pro4\Bean\FollowUpBean.class
+com\rays\pro4\Model\ClientModel.class
 com\rays\pro4\Util\EmailBuilder.class
 com\rays\pro4\controller\RoleListCtl.class
 com\rays\pro4\controller\FacultyListCtl.class

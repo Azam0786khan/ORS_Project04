@@ -12,12 +12,14 @@ import com.rays.pro4.Bean.ClientBean;
 import com.rays.pro4.Bean.ClientBean;
 import com.rays.pro4.Bean.DoctorBean;
 import com.rays.pro4.Bean.PrescriptionBean;
+import com.rays.pro4.Bean.UserBean;
 import com.rays.pro4.Exception.ApplicationException;
 import com.rays.pro4.Exception.DuplicateRecordException;
 import com.rays.pro4.Model.ClientModel;
 import com.rays.pro4.Model.ClientModel;
 import com.rays.pro4.Model.DoctorModel;
 import com.rays.pro4.Model.PrescriptionModel;
+import com.rays.pro4.Model.UserModel;
 import com.rays.pro4.Util.DataUtility;
 import com.rays.pro4.Util.DataValidator;
 import com.rays.pro4.Util.PropertyReader;
@@ -78,23 +80,27 @@ public class ClientCtl extends BaseCtl  {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String op = DataUtility.getString(request.getParameter("operation"));
 		
-		// get Model
+		System.out.println("u ctl do get 1111111");
+		String op = DataUtility.getString(request.getParameter("operation"));
+		// get model
 		ClientModel model = new ClientModel();
 		long id = DataUtility.getLong(request.getParameter("id"));
-		
-		if(id>0){
+		if (id > 0 || op != null) {
+			System.out.println("in id > 0  condition");
 			ClientBean bean;
-			try{
-			bean = model.FindByPK(id);
-			ServletUtility.setBean(bean, request);
-			
-			}catch(ApplicationException e){
+			try {
+				bean = model.FindByPK(id);
+				System.out.println("Ankit11111111111");
+				System.out.println(bean);
+				ServletUtility.setBean(bean, request);
+			} catch (ApplicationException e) {
+				
 				ServletUtility.handleException(e, request, response);
 				return;
 			}
 		}
+
 		ServletUtility.forward(getView(), request, response);
 	}
     

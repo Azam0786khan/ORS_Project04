@@ -57,6 +57,7 @@ public class UserModel {
 
 	}
 
+	
 	public long add(UserBean bean) throws ApplicationException, DuplicateRecordException {
 		log.debug("Model add Started");
 

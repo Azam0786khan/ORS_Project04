@@ -96,6 +96,8 @@
 					href="<%=ORSView.DOCTOR_LIST_CTL%>">Doctor List</b></a> | <a
 					href="<%=ORSView.CLIENT_CTL%>">Add Client</b></a> | <a
 					href="<%=ORSView.CLIENT_LIST_CTL%>">Client List</b></a> | <a
+					href="<%=ORSView.POSITION_CTL%>">Add Position</b></a> | <a
+					href="<%=ORSView.POSITION_LIST_CTL%>">Position List</b></a> | <a
 					target="blank" href="<%=ORSView.JAVA_DOC_VIEW%>">Java Doc</b></a> | <%
  }
  %> <%

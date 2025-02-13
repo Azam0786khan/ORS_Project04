@@ -1,3 +1,4 @@
+<%@page import="com.rays.pro4.Util.DataUtility"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="com.rays.pro4.Bean.PositionBean"%>
 <%@page import="com.rays.pro4.Model.PositionModel"%>
@@ -55,6 +56,10 @@
 					<font color="green"><%=ServletUtility.getSuccessMessage(request)%></font>
 				</h3>
 			</div>
+			
+			<%
+			int next = DataUtility.getInt(request.getAttribute("nextlist").toString());
+			%>
 
 			<%
 			int pageNo = ServletUtility.getPageNo(request);
@@ -158,7 +163,7 @@
 					PositionModel model = new PositionModel();
 					%>
 					<%
-					if (list.size() < pageSize || model.nextPK() - 1 == bean.getId()) {
+					if (list.size() < pageSize || next == 0) {
 					%>
 					<td align="right"><input type="submit" name="operation"
 						disabled="disabled" value="<%=PositionListCtl.OP_NEXT%>"></td>

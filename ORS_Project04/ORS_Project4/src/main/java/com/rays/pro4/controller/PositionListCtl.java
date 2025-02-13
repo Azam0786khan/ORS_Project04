@@ -68,7 +68,8 @@ public class PositionListCtl extends BaseCtl {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		log.debug("PositionListCtl doGet Start");
-		List list;
+		List list = null;
+		List nextList = null;
 
 		int pageNo = 1;
 		int pageSize = DataUtility.getInt(PropertyReader.getValue("page.size"));
@@ -81,6 +82,12 @@ public class PositionListCtl extends BaseCtl {
 
 		try {
 			list = model.search(bean, pageNo, pageSize);
+			
+			nextList = model.search(bean, pageNo + 1, pageSize);
+
+			request.setAttribute("nextlist", nextList.size());
+
+			ServletUtility.setList(list, request);
 			// ServletUtility.setList(list, request);
 			if (list == null || list.size() == 0) {
 				ServletUtility.setErrorMessage("No record found ", request);
@@ -111,7 +118,8 @@ public class PositionListCtl extends BaseCtl {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		log.debug("PositionListCtl doPost Start");
-		List list = null;
+		List list;
+		List nextList = null;
 		String op = DataUtility.getString(request.getParameter("operation"));
 
 		int pageNo = DataUtility.getInt(request.getParameter("pageNo"));
@@ -162,6 +170,12 @@ public class PositionListCtl extends BaseCtl {
 
 		try {
 			list = model.search(bean, pageNo, pageSize);
+			
+			nextList = model.search(bean, pageNo + 1, pageSize);
+
+			request.setAttribute("nextlist", nextList.size());
+			
+			
 		} catch (ApplicationException e) {
 			log.error(e);
 			ServletUtility.handleException(e, request, response);
